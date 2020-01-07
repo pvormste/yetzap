@@ -8,18 +8,21 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-type ConfigureSugaredFunc func(*zap.Logger) (*zap.SugaredLogger, error)
+type ConfigureSugaredFunc func() (*zap.SugaredLogger, error)
 
 type SugaredLogger struct {
 	zapLogger *zap.SugaredLogger
 }
 
 func NewDefaultSugaredLogger(environment yetenv.Environment, rawMinLevel string) (yetlog.Logger, error) {
-	return NewCustomSugaredLogger(func(logger *zap.Logger) (sugaredLogger *zap.SugaredLogger, err error) {
+	return NewCustomSugaredLogger(func() (*zap.SugaredLogger, error) {
 		minLevel := zapcore.InfoLevel
 		if err := minLevel.Set(rawMinLevel); err != nil {
 			return nil, err
 		}
+
+		var logger *zap.Logger
+		var err error
 
 		switch environment {
 		case yetenv.Production:
@@ -42,7 +45,7 @@ func NewDefaultSugaredLogger(environment yetenv.Environment, rawMinLevel string)
 }
 
 func NewCustomSugaredLogger(zapConfigureFunc ConfigureSugaredFunc) (yetlog.Logger, error) {
-	zapSugaredLogger, err := zapConfigureFunc(&zap.Logger{})
+	zapSugaredLogger, err := zapConfigureFunc()
 	if err != nil {
 		return nil, err
 	}
