@@ -67,30 +67,33 @@ func DefaultDevelopmentConfig(minLevel zapcore.Level) zap.Config {
 	return loggerConf
 }
 
-func (s SugaredLogger) Reconfigure(options interface{}) {
-	panic("implement me")
+func (s SugaredLogger) Reconfigure(_ interface{}) {
+	s.Warn("reconfigure is not implemented", "logger", "zap")
 }
 
 func (s SugaredLogger) NewNamedLogger(name string) yetlog.Logger {
-	panic("implement me")
+	namedLogger := s.zapLogger.Named(name)
+	return SugaredLogger{
+		zapLogger: namedLogger,
+	}
 }
 
 func (s SugaredLogger) Debug(message string, fields ...interface{}) {
-	panic("implement me")
+	s.zapLogger.Debugw(message, fields...)
 }
 
 func (s SugaredLogger) Info(message string, fields ...interface{}) {
-	panic("implement me")
+	s.zapLogger.Infow(message, fields...)
 }
 
 func (s SugaredLogger) Warn(message string, fields ...interface{}) {
-	panic("implement me")
+	s.zapLogger.Warnw(message, fields...)
 }
 
 func (s SugaredLogger) Error(message string, fields ...interface{}) {
-	panic("implement me")
+	s.zapLogger.Errorw(message, fields...)
 }
 
 func (s SugaredLogger) Fatal(message string, fields ...interface{}) {
-	panic("implement me")
+	s.zapLogger.Fatalw(message, fields...)
 }
