@@ -26,13 +26,10 @@ func NewDefaultSugaredLogger(environment yetenv.Environment, rawMinLevel string)
 
 		switch environment {
 		case yetenv.Production:
-			loggerConf := zap.NewProductionConfig()
-			loggerConf.Level.SetLevel(minLevel)
+			loggerConf := DefaultProductionConfig(minLevel)
 			logger, err = loggerConf.Build()
 		default:
-			loggerConf := zap.NewDevelopmentConfig()
-			loggerConf.Level.SetLevel(minLevel)
-			loggerConf.EncoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
+			loggerConf := DefaultDevelopmentConfig(minLevel)
 			logger, err = loggerConf.Build()
 		}
 
@@ -53,6 +50,21 @@ func NewCustomSugaredLogger(zapConfigureFunc ConfigureSugaredFunc) (yetlog.Logge
 	return SugaredLogger{
 		zapLogger: zapSugaredLogger,
 	}, nil
+}
+
+func DefaultProductionConfig(minLevel zapcore.Level) zap.Config {
+	loggerConf := zap.NewProductionConfig()
+	loggerConf.Level.SetLevel(minLevel)
+
+	return loggerConf
+}
+
+func DefaultDevelopmentConfig(minLevel zapcore.Level) zap.Config {
+	loggerConf := zap.NewDevelopmentConfig()
+	loggerConf.Level.SetLevel(minLevel)
+	loggerConf.EncoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
+
+	return loggerConf
 }
 
 func (s SugaredLogger) Reconfigure(options interface{}) {
