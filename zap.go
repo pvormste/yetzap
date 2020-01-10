@@ -1,6 +1,8 @@
 package yetzap
 
 import (
+	"strings"
+
 	"github.com/pvormste/yetwebutils/yetenv"
 	"github.com/pvormste/yetwebutils/yetlog"
 
@@ -17,7 +19,7 @@ type SugaredLogger struct {
 func NewDefaultSugaredLogger(environment yetenv.Environment, rawMinLevel string) (yetlog.Logger, error) {
 	return NewCustomSugaredLogger(func() (*zap.SugaredLogger, error) {
 		minLevel := zapcore.InfoLevel
-		if err := minLevel.Set(rawMinLevel); err != nil {
+		if err := minLevel.Set(strings.ToLower(rawMinLevel)); err != nil {
 			return nil, err
 		}
 
