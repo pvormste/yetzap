@@ -2,7 +2,7 @@
 
 # yetzap
 
-`yetzap` is a wrapper package for [uber's zap logger]() which implements the [yetlog interface](). 
+`yetzap` is a wrapper package for [uber's zap logger](https://github.com/uber-go/zap) which implements the [yetlog interface](https://github.com/pvormste/yetlog). 
 It only supports a small subset of the zap logger but it should be enough for most cases.
 
 ## Usage
@@ -31,8 +31,8 @@ func MyLoggerConstructor(rawMinLevel string) (yetlog.Logger, error) {
 			return nil, err
 		}
 
-        loggerConf := DefaultDevelopmentConfig(minLevel)
-        logger, err := loggerConf.Build()
+        	loggerConf := DefaultDevelopmentConfig(minLevel)
+        	logger, err := loggerConf.Build()
 
 		if err != nil {
 			return nil, err
