@@ -3,8 +3,8 @@ package yetzap
 import (
 	"strings"
 
-	"github.com/pvormste/yetwebutils/yetenv"
-	"github.com/pvormste/yetwebutils/yetlog"
+	"github.com/pvormste/yetenv"
+	"github.com/pvormste/yetlog"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
