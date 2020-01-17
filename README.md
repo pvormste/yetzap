@@ -5,6 +5,12 @@
 `yetzap` is a wrapper package for [uber's zap logger](https://github.com/uber-go/zap) which implements the [yetlog interface](https://github.com/pvormste/yetlog). 
 It only supports a small subset of the zap logger but it should be enough in most cases.
 
+## Install
+
+```bash
+go get -u github.com/pvormste/yetzap
+```
+
 ## Usage
 
 ```go
