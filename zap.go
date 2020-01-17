@@ -58,6 +58,13 @@ func NewCustomSugaredLogger(zapConfigureFunc ConfigureSugaredFunc) (yetlog.Logge
 	}, nil
 }
 
+// WrapSugaredLogger wraps an existent sugared logger without needing to touch any configuration.
+func WrapSugaredLogger(sugaredLogger *zap.SugaredLogger) yetlog.Logger {
+	return SugaredLogger{
+		zapLogger: sugaredLogger,
+	}
+}
+
 // DefaultProductionConfig returns the default production config which is used to create a default sugared logger.
 func DefaultProductionConfig(minLevel zapcore.Level) zap.Config {
 	loggerConf := zap.NewProductionConfig()

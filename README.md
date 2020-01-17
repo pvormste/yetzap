@@ -3,7 +3,7 @@
 # yetzap
 
 `yetzap` is a wrapper package for [uber's zap logger](https://github.com/uber-go/zap) which implements the [yetlog interface](https://github.com/pvormste/yetlog). 
-It only supports a small subset of the zap logger but it should be enough for most cases.
+It only supports a small subset of the zap logger but it should be enough in most cases.
 
 ## Usage
 
@@ -20,7 +20,15 @@ zaplogger.Info("started server", "port", 8080)
 
 ## Custom zap logger instance
 
-Provide a `ConfigureSugaredFunc` to the `NewCustomSugaredLogger()` function.
+You can use an already existing zap logger:
+```go
+var sugaredLogger *zap.SugaredLogger
+// Create your logger
+
+yetlogger := yetzap.WrapSugaredLogger(sugaredLogger)
+```
+
+Or you can provide a `ConfigureSugaredFunc` to the `NewCustomSugaredLogger()` function.
 
 Example:
 ```go
@@ -42,3 +50,4 @@ func MyLoggerConstructor(rawMinLevel string) (yetlog.Logger, error) {
 	})
 }
 ```
+
