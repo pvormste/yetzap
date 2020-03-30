@@ -4,6 +4,10 @@ github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/google/renameio v0.1.0/go.mod h1:KWCgfxg9yswjAJkECMjeO8J8rahYeXnNhOm40UhjYkI=
+github.com/ilyakaznacheev/cleanenv v1.2.1 h1:+L4jB4YPPbqia6tkJeZRDw74MkUsnb9uEjn5ceu3ygk=
+github.com/ilyakaznacheev/cleanenv v1.2.1/go.mod h1:53X9Yx1hcUGX8A+GKNMlYvGhuQRx3B86n4wgt3tbYVA=
+github.com/joho/godotenv v1.3.0 h1:Zjp+RcGpHhGlrMbJzXTrZZPrWj+1vfm90La1wgB6Bhc=
+github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/kr/pretty v0.1.0 h1:L/CwN0zerZDmRFUapSPitk6f+Q3+0za1rQkzVuMiMFI=
 github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORNo=
@@ -18,6 +22,8 @@ github.com/pvormste/yetenv v0.1.0 h1:m7lgu/oGtsxd04ssE5Nw5BOEB3oMTRp6ojuAVFGRUMM
 github.com/pvormste/yetenv v0.1.0/go.mod h1:jP36sqSeyFJo6EmZg+yaqtJk3pZOtb4+72dgoIWoCas=
 github.com/pvormste/yetenv v0.2.0 h1:/W1s2ZD0QvNxT5vse/C+TpRwOUkEKDLTdrJbe6ZC8WM=
 github.com/pvormste/yetenv v0.2.0/go.mod h1:jP36sqSeyFJo6EmZg+yaqtJk3pZOtb4+72dgoIWoCas=
+github.com/pvormste/yetenv v0.3.0 h1:UAwVE3WJVswBSG6uW/5CYvJi7yKx8pityW/wvxuMtjU=
+github.com/pvormste/yetenv v0.3.0/go.mod h1:pRg0lbBK2PNdHSlIXnPWBnYGV2TrQr770beQPfXONyw=
 github.com/pvormste/yetlog v0.1.0 h1:ZTBbbCnsXaWUtPFEzCfc7g4RMByTuo45dTmk33zf6L4=
 github.com/pvormste/yetlog v0.1.0/go.mod h1:tu3aELildleY7j/6GcgH6BYRmANxW5lx0qOys4eV9P4=
 github.com/rogpeppe/go-internal v1.3.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
@@ -25,6 +31,7 @@ github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.4.0 h1:2E4SXV/wtOkTonXsotYi4li6zVWxYlZuYNCXe9XRJyk=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
+github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
 go.uber.org/atomic v1.5.0 h1:OI5t8sDa1Or+q8AeE+yKeB/SDYioSHAgcVljj9JIETY=
 go.uber.org/atomic v1.5.0/go.mod h1:sABNBOSYdrvTF6hTgEIbc7YasKWGhgEQZyfxyTvoXHQ=
 go.uber.org/atomic v1.5.1 h1:rsqfU5vBkVknbhUGbAUwQKR2H4ItV8tjJ+6kJX4cxHM=
