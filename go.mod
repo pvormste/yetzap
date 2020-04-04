@@ -3,7 +3,7 @@ module github.com/pvormste/yetzap
 go 1.13
 
 require (
-	github.com/pvormste/yetenv v0.2.0
+	github.com/pvormste/yetenv v0.3.0
 	github.com/pvormste/yetlog v0.1.0
 	go.uber.org/atomic v1.5.1 // indirect
 	go.uber.org/multierr v1.4.0 // indirect
