@@ -26,18 +26,16 @@ func NewDefaultSugaredLogger(environment yetenv.Environment, rawMinLevel string)
 			return nil, err
 		}
 
-		var logger *zap.Logger
-		var err error
+		var loggerConf zap.Config
 
 		switch environment {
 		case yetenv.Production:
-			loggerConf := DefaultProductionConfig(minLevel)
-			logger, err = loggerConf.Build()
+			loggerConf = DefaultProductionConfig(minLevel)
 		default:
-			loggerConf := DefaultDevelopmentConfig(minLevel)
-			logger, err = loggerConf.Build()
+			loggerConf = DefaultDevelopmentConfig(minLevel)
 		}
 
+		logger, err := loggerConf.Build(zap.AddCallerSkip(1))
 		if err != nil {
 			return nil, err
 		}
