@@ -35,6 +35,7 @@ func NewDefaultSugaredLogger(environment yetenv.Environment, rawMinLevel string)
 			loggerConf = DefaultDevelopmentConfig(minLevel)
 		}
 
+		loggerConf.DisableStacktrace = true
 		logger, err := loggerConf.Build(zap.AddCallerSkip(1))
 		if err != nil {
 			return nil, err
